@@ -1,0 +1,68 @@
+:root {
+  --red: #DA0014;
+  --cream: #FFF5E4;
+  --lightP: #F8CBD5;
+  --pink: #F2AFBC;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: var(--lightP);
+  align-items: center;
+  padding: 1rem;
+  text-align: center;
+}
+
+.body h1 {
+  font-family: "Lemon", cursive;
+  color: var(--cream);
+  font-size: clamp(2rem, 6vw, 5rem);
+  -webkit-text-stroke: 0.1rem var(--red);
+  margin: 0 0 1rem;
+}
+
+.photo-sec {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.drinks {
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  display: block;
+}
+
+.see-button {
+  background-color: var(--red);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 0.7rem 1.2rem;
+  font-size: 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+.see-button:hover {
+  background-color: white;
+  color: var(--red);
+  border: 1px solid var(--red);
+}
+
+@media (max-width: 768px) {
+  .body {
+    padding: 1rem 0.75rem;
+  }
+
+  .body h1 {
+    font-size: 2.2rem;
+  }
+
+  .drinks {
+    max-width: 100%;
+  }
+}

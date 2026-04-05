@@ -1,0 +1,19 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #fff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* tablet */
+@media (max-width: 1024px) {
+
+}
+
+/* phone */
+@media (max-width: 768px) {
+
+}

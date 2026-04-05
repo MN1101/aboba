@@ -1,0 +1,97 @@
+:root {
+  --red: #DA0014;
+  --cream: #FFF5E4;
+  --lightP: #F8CBD5;
+  --pink: #F2AFBC;
+}
+
+.bestSeller {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1rem;
+  background-color: var(--cream);
+}
+
+.bestSeller h2 {
+  font-family: "Lemon", cursive;
+  color: var(--red);
+  font-size: clamp(2rem, 6vw, 5rem);
+  margin-bottom: 2rem;
+}
+
+.top,
+.bott {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.thai,
+.taro,
+.coconut,
+.matcha,
+.sugarcloud,
+.straw,
+.mango,
+.coffee,
+.oreo,
+.peach,
+.mactha {
+  display: flex;
+  flex-direction: column;
+  width: min(180px, 100%);
+  align-items: center;
+  text-align: center;
+}
+
+.thai img,
+.taro img,
+.coconut img,
+.matcha img,
+.sugarcloud img,
+.straw img,
+.mango img,
+.coffee img,
+.oreo img,
+.peach img,
+.mactha img {
+  width: 100%;
+  max-width: 160px;
+  height: auto;
+  display: block;
+}
+
+.bestSeller p {
+  margin-top: 0.75rem;
+}
+
+@media (max-width: 768px) {
+  .bestSeller {
+    padding: 1rem 0.75rem;
+  }
+
+  .bestSeller h2 {
+    font-size: 2.2rem;
+  }
+
+  .top,
+  .bott {
+    gap: 0.75rem;
+  }
+
+  .thai,
+  .taro,
+  .coconut,
+  .matcha,
+  .sugarcloud,
+  .straw,
+  .mango,
+  .coffee,
+  .oreo,
+  .peach,
+  .mactha {
+    width: 45%;
+  }
+}
