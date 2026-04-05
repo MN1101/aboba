@@ -61,9 +61,9 @@ function Menu() {
           <section className="menu-card toppings-card">
             <h2 className="tittle">Toppings</h2>
             <div className="topping-grid">
-              <ul>{toppingLeft.map(i => <li key={i}>• {i}</li>)}</ul>
-              <ul>{toppingMid.map(i => <li key={i}>• {i}</li>)}</ul>
-              <ul>{toppingRight.map(i => <li key={i}>• {i}</li>)}</ul>
+              <ul>{toppingLeft.map(i => <li key={i}> {i}</li>)}</ul>
+              <ul>{toppingMid.map(i => <li key={i}> {i}</li>)}</ul>
+              <ul>{toppingRight.map(i => <li key={i}> {i}</li>)}</ul>
             </div>
           </section>
 
