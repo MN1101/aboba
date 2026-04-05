@@ -12,7 +12,7 @@ function Footer() {
 
       <div className="footer-nav-section">
         <div className="hour">
-          <h3>Business Hours:</h3>
+          <h3>Business Hours</h3>
           <p>SUN - WED: 9:30AM - 9:00PM</p>
           <p>THU - SAT: 9:30AM - 10:00PM</p>
         </div>
