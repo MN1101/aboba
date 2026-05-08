@@ -24,8 +24,7 @@ function Menu() {
 
   const fruitTea = [
     "Mango Tea","Strawberry Tea","Peach Tea","Passion Fruit Tea",
-    "Lychee Tea","Mango Passion","Strawberry Lemonade","Blue Lemonade"
-  ];
+    "Lychee Tea","Mango Passion","Strawberry Lemonade","Blue Lemonade"];
 
   const coffee = ["Vietnamese Ice Coffee","Viet Salted Milk Foam Ice Coffee"];
 
@@ -39,31 +38,49 @@ function Menu() {
 
   const smoothie = ["Strawberry Banana","Mango Passion Fruit","Blue-Strawberry Banana","Avocado","Banana"];
 
-  const egg = ["Original","Matcha","Chocolate","(Add Icecream & Boba)"];
+  const egg = ["Original","Matcha","Chocolate"];
 
-  const renderList = (items) =>
-    items.map((item) => (
+  const renderList = (items, price) =>
+    items.map((item, index) => {
+      let p = price;
+
+      if (items === latte) {
+        if (index === 0 || index === items.length - 1) {
+          p = 7;
+        } else {
+          p = 8.5;
+        }
+      }
+      if (items === toppingMid) {
+        if (index === toppingMid.length - 1) {
+          p = 1.5;
+        } else {
+          p = 0.8;
+        }
+      }
+      return (
       <li key={item} className="menu-line">
         <span>{item}</span>
-        <span>$</span>
+        <span>${p}</span>
       </li>
-    ));
+      );
+    });
 
   return (
     <div className="menu-body">
       <div className="top-grid">
         <section className="menu-card cream-card">
           <h2 className="tittle">Milk Tea</h2>
-          <ul className="menu-list">{renderList(milkTea)}</ul>
+          <ul className="menu-list">{renderList(milkTea, 7)}</ul>
         </section>
 
         <div>
           <section className="menu-card toppings-card">
             <h2 className="tittle">Toppings</h2>
             <div className="topping-grid">
-              <ul>{toppingLeft.map(i => <li key={i}> {i}</li>)}</ul>
-              <ul>{toppingMid.map(i => <li key={i}> {i}</li>)}</ul>
-              <ul>{toppingRight.map(i => <li key={i}> {i}</li>)}</ul>
+              <ul>{renderList(toppingLeft, 0.8)}</ul>
+              <ul>{renderList(toppingMid, 0.8)}</ul>
+              <ul>{renderList(toppingRight, 0.8)}</ul>
             </div>
           </section>
 
@@ -72,7 +89,7 @@ function Menu() {
               <img src={sugarCloud} alt="Brown Sugar Cloud" className="menu-img" />
               <div>
                 <h2 className="tittle small-tittle">Float</h2>
-                <ul className="menu-list">{renderList(float)}</ul>
+                <ul className="menu-list">{renderList(float, 8.5)}</ul>
               </div>
             </div>
           </section>
@@ -86,7 +103,7 @@ function Menu() {
           </h2>
 
           <div className="blended-grid">
-            <ul className="menu-list">{renderList(blendedItems)}</ul>
+            <ul className="menu-list">{renderList(blendedItems, 8)}</ul>
 
             <div className="blended-image">
               <img src={blended} alt="Blended Drinks" className="blended-photo" />
@@ -99,12 +116,12 @@ function Menu() {
             <h2 className="tittle">
               Fruit Tea <br />(Black / Green Tea)
             </h2>
-            <ul className="menu-list">{renderList(fruitTea)}</ul>
+            <ul className="menu-list">{renderList(fruitTea, 7)}</ul>
           </section>
 
           <section className="menu-card white-card">
             <h2 className="tittle">Coffee</h2>
-            <ul className="menu-list">{renderList(coffee)}</ul>
+            <ul className="menu-list">{renderList(coffee, 7)}</ul>
           </section>
         </div>
       </div>
@@ -112,11 +129,11 @@ function Menu() {
       <div className="bottom-grid">
         <section className="menu-card white-card">
           <h2 className="tittle">Latte</h2>
-          <ul className="menu-list">{renderList(latte)}</ul>
+          <ul className="menu-list">{renderList(latte, 8.5)}</ul>
         </section>
 
         <section className="menu-card pink-card">
-          <h2 className="tittle">Sno - Ball (Pick 3 Flavors)</h2>
+          <h2 className="tittle">Sno - Ball ($6 for 3 flavors)</h2>
           <div className="snow-grid">
             <ul>{snowLeft.map(i => <li key={i}>{i}</li>)}</ul>
             <ul>{snowRight.map(i => <li key={i}>{i}</li>)}</ul>
@@ -125,14 +142,14 @@ function Menu() {
 
         <section className="menu-card white-card">
           <h2 className="tittle">Smoothie</h2>
-          <ul className="menu-list">{renderList(smoothie)}</ul>
+          <ul className="menu-list">{renderList(smoothie, 8.5)}</ul>
         </section>
 
         <section className="egg-card pink-card">
           <div className="egg-grid">
             <div>
-              <h2 className="tittle">Egg Waffle</h2>
-              <ul>{egg.map(i => <li key={i}>{i}</li>)}</ul>
+              <h2 className="tittle">Egg Waffle w Icecream</h2>
+              <ul className="menu-list">{renderList(egg, 5.5)}</ul>
             </div>
             <img src={eggwaffle} alt="Egg Waffle" className="menu-img" />
           </div>
